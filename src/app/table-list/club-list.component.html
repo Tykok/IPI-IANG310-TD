@@ -1,0 +1,63 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <a></a>
+          <h4 class="card-title">Liste Clubs <img src="https://api.iconify.design/material-symbols:add.svg"></h4>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table">
+              <thead class=" text-primary">
+                <th>
+                  Id
+                </th>
+                <th>
+                  Actions
+                </th>
+                <th>
+                  Nom
+                </th>
+                <th>
+                  Ville
+                </th>
+                <th>
+                  Pays
+                </th>
+                <th>
+                  Stade
+                </th>
+              </thead>
+              <tbody>
+              <tr *ngFor="let club of clubList">
+                <td>
+                  {{club.id}}
+                </td>
+                <td>
+                  <img class="mr-1" src="https://api.iconify.design/material-symbols:delete.svg">
+                  <img class="mr-1" src="https://api.iconify.design/material-symbols:edit.svg">
+                </td>
+                <td>
+                  {{club.nom}}
+                </td>
+                <td>
+                  {{club.pays}}
+                </td>
+                <td>
+                  {{club.stade}}
+                </td>
+                <td>
+                  {{club.ville}}
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
