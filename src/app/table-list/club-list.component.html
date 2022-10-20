@@ -5,31 +5,35 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-header">
-          <a></a>
-          <h4 class="card-title">Liste Clubs <img src="https://api.iconify.design/material-symbols:add.svg"></h4>
+          <h4 class="card-title">
+            <img height="50" width="50" src="https://api.iconify.design/ph:soccer-ball-light.svg">
+            Liste Clubs
+            <img src="https://api.iconify.design/material-symbols:add.svg">
+          </h4>
         </div>
         <div class="card-body">
           <div class="table-responsive">
             <table class="table">
-              <thead class=" text-primary">
-                <th>
-                  Id
-                </th>
-                <th>
-                  Actions
-                </th>
-                <th>
-                  Nom
-                </th>
-                <th>
-                  Ville
-                </th>
-                <th>
-                  Pays
-                </th>
-                <th>
-                  Stade
-                </th>
+              <thead class="text-primary">
+              <th>
+                Id
+              </th>
+              <th>
+                Actions
+              </th>
+              <th>
+                Nom
+              </th>
+              <th>
+                Ville
+              </th>
+              <th>
+                Pays
+              </th>
+              <th>
+                <img src="https://api.iconify.design/material-symbols:stadium.svg">
+                Stade
+              </th>
               </thead>
               <tbody>
               <tr *ngFor="let club of clubList">
@@ -37,20 +41,21 @@
                   {{club.id}}
                 </td>
                 <td>
-                  <img class="mr-1" src="https://api.iconify.design/material-symbols:delete.svg">
-                  <img class="mr-1" src="https://api.iconify.design/material-symbols:edit.svg">
+                  <img class="ml-2" src="https://api.iconify.design/material-symbols:edit.svg" alt="edit">
+                  <img class="ml-3" src="https://api.iconify.design/material-symbols:delete.svg" alt="delete">
                 </td>
                 <td>
+                  <img height="25" class="mr-2" [src]="club.logo">
                   {{club.nom}}
+                </td>
+                <td>
+                  {{club.ville}}
                 </td>
                 <td>
                   {{club.pays}}
                 </td>
                 <td>
                   {{club.stade}}
-                </td>
-                <td>
-                  {{club.ville}}
                 </td>
               </tr>
               </tbody>
