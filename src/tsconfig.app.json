@@ -1,5 +1,5 @@
 {
-  "extends": "../../../Downloads/now-ui-dashboard-angular-master/tsconfig.json",
+  "extends": "../tsconfig.json",
   "compilerOptions": {
     "outDir": "../out-tsc/app",
     "module": "esnext",
