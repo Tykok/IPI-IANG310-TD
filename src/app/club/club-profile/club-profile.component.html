@@ -1,0 +1,114 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-7">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="title">{{title}}</h5>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="clubForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="nom">Name*</label>
+                  <input type="text" class="form-control"
+                         id="nom"
+                         placeholder="Type the name of the club ..."
+                         formControlName="nom">
+                </div>
+                <small
+                  *ngIf="(submitted || controls.nom.touched || controls.nom.dirty ) && controls.nom.errors?.required">
+                  <span class="text-danger">{{"Ce champs est requis"}}</span>
+                </small>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="ville">City*</label>
+                  <input type="text" class="form-control"
+                         id="ville"
+                         placeholder="Type the name of a city ..."
+                         formControlName="ville">
+                  <small
+                    *ngIf="(submitted || controls.ville.touched || controls.ville.dirty ) && controls.ville.errors?.required">
+                    <span class="text-danger">{{"Ce champs est requis"}}</span>
+                  </small>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="pays">Country*</label>
+                  <input type="text" class="form-control"
+                         id="pays"
+                         placeholder="Type the name of a country ..."
+                         formControlName="pays">
+                  <small
+                    *ngIf="(submitted || controls.pays.touched || controls.pays.dirty ) && controls.pays.errors?.required">
+                    <span class="text-danger">{{"Ce champs est requis"}}</span>
+                  </small>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="stade">Stadium*</label>
+                  <input type="text" class="form-control"
+                         id="stade"
+                         placeholder="Type the name of the club's stadium ..."
+                         formControlName="stade">
+                  <small
+                    *ngIf="(submitted || controls.stade.touched || controls.stade.dirty ) && controls.stade.errors?.required">
+                    <span class="text-danger">{{"Ce champs est requis"}}</span>
+                  </small>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="logo">Logo's Url*</label>
+                  <input type="text" class="form-control"
+                         id="logo"
+                         placeholder="Type the name of the club's stadium ..."
+                         formControlName="logo">
+                  <small
+                    *ngIf="(submitted || controls.logo.touched || controls.logo.dirty ) && controls.logo.errors?.required">
+                    <span class="text-danger">{{"Ce champs est requis"}}</span>
+                  </small>
+                </div>
+              </div>
+            </div>
+            <div class="pull-right">
+              <button class="btn btn-primary" (click)="onSubmit()">Valider</button>
+            </div>
+            <div class="pull-right">
+              <button class="btn btn-secondary" (click)="back()">Back</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <div class="card card-user">
+        <div class="image">
+          <img src="https://cdn.pixabay.com/photo/2014/10/14/20/24/soccer-488700_1280.jpg" alt="logo">
+        </div>
+        <div class="card-body">
+          <div class="author">
+            <a>
+              <img class="avatar" [src]="club.logo ? club.logo : 'https://cdn.pixabay.com/photo/2018/06/12/19/59/football-3471371_1280.jpg'" alt="logo">
+              <h5 class="title text-primary">{{controls.nom.value}}</h5>
+            </a>
+            <p class="description">
+              City : {{controls.ville.value}}
+            </p>
+            <p class="description">
+              Country : {{controls.pays.value}}
+            </p>
+            <p class="description">
+              Stadium : {{controls.stade.value}}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
