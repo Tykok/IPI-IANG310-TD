@@ -86,6 +86,8 @@ export class ClubProfileComponent implements OnInit {
   }
 
   back() {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.loadClub(id)
     this.location.back();
   }
 

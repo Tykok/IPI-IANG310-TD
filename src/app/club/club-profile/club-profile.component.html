@@ -12,10 +12,10 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
-                  <label for="nom">Name*</label>
+                  <label for="nom" class="text-primary">Name*</label>
                   <input type="text" class="form-control"
                          id="nom"
-                         placeholder="Type the name of the club ..."
+                         placeholder="Type the name of the club"
                          formControlName="nom">
                 </div>
                 <small
@@ -25,10 +25,10 @@
               </div>
               <div class="col-md-12">
                 <div class="form-group">
-                  <label for="ville">City*</label>
+                  <label for="ville" class="text-primary">City*</label>
                   <input type="text" class="form-control"
                          id="ville"
-                         placeholder="Type the name of a city ..."
+                         placeholder="Type the name of a city"
                          formControlName="ville">
                   <small
                     *ngIf="(submitted || controls.ville.touched || controls.ville.dirty ) && controls.ville.errors?.required">
@@ -38,10 +38,10 @@
               </div>
               <div class="col-md-12">
                 <div class="form-group">
-                  <label for="pays">Country*</label>
+                  <label for="pays" class="text-primary">Country*</label>
                   <input type="text" class="form-control"
                          id="pays"
-                         placeholder="Type the name of a country ..."
+                         placeholder="Type the name of a country"
                          formControlName="pays">
                   <small
                     *ngIf="(submitted || controls.pays.touched || controls.pays.dirty ) && controls.pays.errors?.required">
@@ -51,10 +51,10 @@
               </div>
               <div class="col-md-12">
                 <div class="form-group">
-                  <label for="stade">Stadium*</label>
+                  <label for="stade" class="text-primary">Stadium*</label>
                   <input type="text" class="form-control"
                          id="stade"
-                         placeholder="Type the name of the club's stadium ..."
+                         placeholder="Type the name of the club's stadium"
                          formControlName="stade">
                   <small
                     *ngIf="(submitted || controls.stade.touched || controls.stade.dirty ) && controls.stade.errors?.required">
@@ -64,10 +64,10 @@
               </div>
               <div class="col-md-12">
                 <div class="form-group">
-                  <label for="logo">Logo's Url*</label>
+                  <label for="logo" class="text-primary">Logo's Url*</label>
                   <input type="text" class="form-control"
                          id="logo"
-                         placeholder="Type the name of the club's stadium ..."
+                         placeholder="Type the name of the club's stadium"
                          formControlName="logo">
                   <small
                     *ngIf="(submitted || controls.logo.touched || controls.logo.dirty ) && controls.logo.errors?.required">
@@ -77,7 +77,7 @@
               </div>
             </div>
             <div class="pull-right">
-              <button class="btn btn-primary" (click)="onSubmit()">Valider</button>
+              <button class="btn btn-primary" (click)="onSubmit()">Submit</button>
             </div>
             <div class="pull-right">
               <button class="btn btn-secondary" (click)="back()">Back</button>
@@ -94,17 +94,25 @@
         <div class="card-body">
           <div class="author">
             <a>
-              <img class="avatar" [src]="club.logo ? club.logo : 'https://cdn.pixabay.com/photo/2018/06/12/19/59/football-3471371_1280.jpg'" alt="logo">
-              <h5 class="title text-primary">{{controls.nom.value}}</h5>
+              <img class="avatar"
+                   [src]="club.logo ? club.logo : 'https://cdn.pixabay.com/photo/2018/06/12/19/59/football-3471371_1280.jpg'"
+                   alt="logo">
+              <h5 class="title text-primary">{{controls.nom.value ? controls.nom.value : 'Club\'s name'}}</h5>
             </a>
-            <p class="description">
-              City : {{controls.ville.value}}
+            <p class="text-primary">
+              <img src="https://api.iconify.design/material-symbols:location-city.svg" width="25" height="25"
+                   class="mr-1">
+              {{controls.ville.value ? controls.ville.value : 'City'}}
             </p>
-            <p class="description">
-              Country : {{controls.pays.value}}
+            <p class="text-primary">
+              <img src="https://api.iconify.design/material-symbols:flag-outline-rounded.svg" width="25" height="25"
+                   class="mr-1">
+              {{controls.pays.value ? controls.pays.value : 'Country'}}
             </p>
-            <p class="description">
-              Stadium : {{controls.stade.value}}
+            <p class="text-primary">
+              <img src="https://api.iconify.design/material-symbols:stadium-outline.svg" width="25" height="25"
+                   class="mr-1">
+              {{controls.stade.value ? controls.stade.value : 'Stadium'}}
             </p>
           </div>
         </div>

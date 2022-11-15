@@ -5,10 +5,10 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-header">
-          <h4 class="card-title">
-            <img height="50" width="50" src="https://api.iconify.design/ph:soccer-ball-light.svg">
-            Liste Clubs
+          <h4 class="card-title font-weight-bold">
+            Liste
             <img src="https://api.iconify.design/material-symbols:add.svg" (click)="updateClub()"
+                 ngbTooltip="Ajouter un club"
                  style="cursor: pointer">
           </h4>
         </div>
@@ -23,16 +23,16 @@
                 Actions
               </th>
               <th>
-                Nom
+                Name
               </th>
               <th>
-                Ville
+                City
               </th>
               <th>
-                Pays
+                Country
               </th>
               <th>
-                Stade
+                Stadium
               </th>
               </thead>
               <tbody>
@@ -42,9 +42,9 @@
                 </td>
                 <td>
                   <img class="ml-2" src="https://api.iconify.design/material-symbols:edit.svg" alt="edit"
-                       (click)="updateClub(club)" style="cursor: pointer">
+                       (click)="updateClub(club)" style="cursor: pointer" ngbTooltip="Éditer club">
                   <img class="ml-3" src="https://api.iconify.design/material-symbols:delete.svg" alt="delete"
-                       (click)="deleteClub(club)" style="cursor: pointer">
+                       (click)="deleteClub(club)" style="cursor: pointer" ngbTooltip="Supprimer club">
                 </td>
                 <td>
                   <img height="25" class="mr-2" [src]="club.logo">
