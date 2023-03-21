@@ -12,59 +12,59 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
-                  <label for="nom" class="text-primary">Name*</label>
+                  <label for="name" class="text-primary">Nom*</label>
                   <input type="text" class="form-control"
-                         id="nom"
+                         id="name"
                          placeholder="Type the name of the club"
-                         formControlName="nom">
+                         formControlName="name">
                 </div>
                 <small
-                  *ngIf="(submitted || controls.nom.touched || controls.nom.dirty ) && controls.nom.errors?.required">
+                  *ngIf="(submitted || controls.name.touched || controls.name.dirty ) && controls.name.errors?.required">
                   <span class="text-danger">{{"Ce champs est requis"}}</span>
                 </small>
               </div>
               <div class="col-md-12">
                 <div class="form-group">
-                  <label for="ville" class="text-primary">City*</label>
+                  <label for="city" class="text-primary">Ville*</label>
                   <input type="text" class="form-control"
-                         id="ville"
+                         id="city"
                          placeholder="Type the name of a city"
-                         formControlName="ville">
+                         formControlName="city">
                   <small
-                    *ngIf="(submitted || controls.ville.touched || controls.ville.dirty ) && controls.ville.errors?.required">
+                    *ngIf="(submitted || controls.city.touched || controls.city.dirty ) && controls.city.errors?.required">
                     <span class="text-danger">{{"Ce champs est requis"}}</span>
                   </small>
                 </div>
               </div>
               <div class="col-md-12">
                 <div class="form-group">
-                  <label for="pays" class="text-primary">Country*</label>
+                  <label for="country" class="text-primary">Pays*</label>
                   <input type="text" class="form-control"
-                         id="pays"
+                         id="country"
                          placeholder="Type the name of a country"
-                         formControlName="pays">
+                         formControlName="country">
                   <small
-                    *ngIf="(submitted || controls.pays.touched || controls.pays.dirty ) && controls.pays.errors?.required">
+                    *ngIf="(submitted || controls.country.touched || controls.country.dirty ) && controls.country.errors?.required">
                     <span class="text-danger">{{"Ce champs est requis"}}</span>
                   </small>
                 </div>
               </div>
               <div class="col-md-12">
                 <div class="form-group">
-                  <label for="stade" class="text-primary">Stadium*</label>
+                  <label for="stadium" class="text-primary">Stade*</label>
                   <input type="text" class="form-control"
-                         id="stade"
+                         id="stadium"
                          placeholder="Type the name of the club's stadium"
-                         formControlName="stade">
+                         formControlName="stadium">
                   <small
-                    *ngIf="(submitted || controls.stade.touched || controls.stade.dirty ) && controls.stade.errors?.required">
+                    *ngIf="(submitted || controls.stadium.touched || controls.stadium.dirty ) && controls.stadium.errors?.required">
                     <span class="text-danger">{{"Ce champs est requis"}}</span>
                   </small>
                 </div>
               </div>
               <div class="col-md-12">
                 <div class="form-group">
-                  <label for="logo" class="text-primary">Logo's Url*</label>
+                  <label for="logo" class="text-primary">Url du logo*</label>
                   <input type="text" class="form-control"
                          id="logo"
                          placeholder="Type the name of the club's stadium"
@@ -77,10 +77,10 @@
               </div>
             </div>
             <div class="pull-right">
-              <button class="btn btn-primary" (click)="onSubmit()">Submit</button>
+              <button class="btn btn-primary" (click)="onSubmit()">Valider</button>
             </div>
             <div class="pull-right">
-              <button class="btn btn-secondary" (click)="back()">Back</button>
+              <button class="btn btn-secondary" (click)="back()">Retour</button>
             </div>
           </form>
         </div>
@@ -97,22 +97,22 @@
               <img class="avatar"
                    [src]="club.logo ? club.logo : 'https://cdn.pixabay.com/photo/2018/06/12/19/59/football-3471371_1280.jpg'"
                    alt="logo">
-              <h5 class="title text-primary">{{controls.nom.value ? controls.nom.value : 'Club\'s name'}}</h5>
+              <h5 class="title text-primary">{{controls.name.value ? controls.name.value : 'Nom du club'}}</h5>
             </a>
             <p class="text-primary">
               <img src="https://api.iconify.design/material-symbols:location-city.svg" width="25" height="25"
                    class="mr-1">
-              {{controls.ville.value ? controls.ville.value : 'City'}}
+              {{controls.city.value ? controls.city.value : 'Ville'}}
             </p>
             <p class="text-primary">
               <img src="https://api.iconify.design/material-symbols:flag-outline-rounded.svg" width="25" height="25"
                    class="mr-1">
-              {{controls.pays.value ? controls.pays.value : 'Country'}}
+              {{controls.country.value ? controls.country.value : 'Pays'}}
             </p>
             <p class="text-primary">
               <img src="https://api.iconify.design/material-symbols:stadium-outline.svg" width="25" height="25"
                    class="mr-1">
-              {{controls.stade.value ? controls.stade.value : 'Stadium'}}
+              {{controls.stadium.value ? controls.stadium.value : 'Stade'}}
             </p>
           </div>
         </div>

@@ -23,16 +23,16 @@
                 Actions
               </th>
               <th>
-                Name
+                Nom
               </th>
               <th>
-                City
+                Ville
               </th>
               <th>
-                Country
+                Pays
               </th>
               <th>
-                Stadium
+                Stade
               </th>
               </thead>
               <tbody>
@@ -42,22 +42,22 @@
                 </td>
                 <td>
                   <img class="ml-2" src="https://api.iconify.design/material-symbols:edit.svg" alt="edit"
-                       (click)="updateClub(club)" style="cursor: pointer" ngbTooltip="Éditer club">
+                       (click)="updateClub(club)" style="cursor: pointer" ngbTooltip="Mettre à jour {{club.name}}">
                   <img class="ml-3" src="https://api.iconify.design/material-symbols:delete.svg" alt="delete"
-                       (click)="deleteClub(club)" style="cursor: pointer" ngbTooltip="Supprimer club">
+                       (click)="deleteClub(club)" style="cursor: pointer" ngbTooltip="Supprimer {{club.name}}">
                 </td>
                 <td>
                   <img height="25" class="mr-2" [src]="club.logo">
-                  {{club.nom}}
+                  {{club.name}}
                 </td>
                 <td>
-                  {{club.ville}}
+                  {{club.city}}
                 </td>
                 <td>
-                  {{club.pays}}
+                  {{club.country}}
                 </td>
                 <td>
-                  {{club.stade}}
+                  {{club.stadium}}
                 </td>
               </tr>
               </tbody>

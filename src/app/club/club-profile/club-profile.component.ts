@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
-import {Club} from "../../classes/club";
+import {ClubModel} from "../../classes/club.model";
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {clubs} from "../clubs";
 import {Location} from "@angular/common";
@@ -11,7 +11,7 @@ import {Location} from "@angular/common";
   styleUrls: ['./club-profile.component.css']
 })
 export class ClubProfileComponent implements OnInit {
-  club: Club;
+  club: ClubModel;
   title = ''
 
   clubForm: FormGroup;
@@ -25,38 +25,38 @@ export class ClubProfileComponent implements OnInit {
 
   ngOnInit() {
     this.clubForm = this.fb.group({
-      'nom': new FormControl(undefined, Validators.required),
-      'ville': new FormControl(undefined, Validators.required),
-      'pays': new FormControl(undefined, Validators.required),
-      'stade': new FormControl(undefined, Validators.required),
+      'name': new FormControl(undefined, Validators.required),
+      'city': new FormControl(undefined, Validators.required),
+      'country': new FormControl(undefined, Validators.required),
+      'stadium': new FormControl(undefined, Validators.required),
       'logo': new FormControl(undefined, Validators.required)
     });
 
     if (this.route.snapshot.routeConfig.path === 'club/new') {
-      this.title = 'Add a new club'
+      this.title = 'Ajouter un nouveau club'
       this.loadClub();
     } else {
-      this.title = 'Update club\'s info'
+      this.title = 'Modifier les information du club'
       const id = +this.route.snapshot.paramMap.get('id');
       this.loadClub(id)
     }
   }
 
   loadClub(id?) {
-    this.club = id ? clubs.find(c => c.id === id) : new Club(clubs.length + 1, undefined, undefined, undefined, undefined, undefined, true)
+    this.club = id ? clubs.find(c => c.id === id) : new ClubModel(clubs.length + 1, undefined, undefined, undefined, undefined, undefined, true)
     this.setControls();
   }
-
+z
   get controls() {
     return this.clubForm.controls
   }
 
   setControls() {
     this.clubForm.patchValue({
-      nom: this.club.nom,
-      ville: this.club.ville,
-      pays: this.club.pays,
-      stade: this.club.stade,
+      name: this.club.name,
+      city: this.club.city,
+      country: this.club.country,
+      stadium: this.club.stadium,
       logo: this.club.logo,
     });
   }
@@ -69,10 +69,10 @@ export class ClubProfileComponent implements OnInit {
       console.log('INVALID', this.clubForm.controls)
       return;
     }
-    this.club.nom = this.controls.nom.value;
-    this.club.ville = this.controls.ville.value;
-    this.club.pays = this.controls.pays.value;
-    this.club.stade = this.controls.stade.value;
+    this.club.name = this.controls.name.value;
+    this.club.city = this.controls.city.value;
+    this.club.country = this.controls.country.value;
+    this.club.stadium = this.controls.stadium.value;
     this.club.logo = this.controls.logo.value;
 
     if (!clubs.find(c => c.id === this.club.id)){

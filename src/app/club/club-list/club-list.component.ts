@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Club} from "../../classes/club";
+import {ClubModel} from "../../classes/club.model";
 import {Router} from "@angular/router";
 import {clubs} from "../clubs";
 
@@ -9,7 +9,7 @@ import {clubs} from "../clubs";
   styleUrls: ['./club-list.component.css']
 })
 export class ClubListComponent implements OnInit {
-  clubList : Array<Club>;
+  clubList : Array<ClubModel>;
 
   constructor(private router: Router) {
   }
