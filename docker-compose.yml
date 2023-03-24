@@ -1,0 +1,58 @@
+version: "3.9"
+services:
+
+  # FRONTEND
+  front:
+    build: 
+      context: ./front
+      target: run
+    container_name: FoootballFront-Angular
+    restart: always
+    ports:
+      - '4200:4200'
+    links:
+      - backend
+    depends_on:
+      - backend
+    volumes:
+      - ./front:/app
+
+  # BACKEND
+  backend:
+    build: 
+      context: ./back
+      target: run
+    container_name: FoootballAPI-Node
+    restart: always
+    ports:
+      - '8080:8080'
+    links:
+      - postgres_database
+    depends_on:
+      - postgres_database
+    environment:
+      DB_NAME: football
+      DB_PASSWORD: docker
+      DB_USER: docker
+      DB_HOST: postgres_database
+      DB_PORT: 5432
+    volumes:
+      - ./back:/app
+    command: bash /app/start.sh
+
+  # DATABASE
+  postgres_database:
+    image: postgres
+    container_name: Football-DB
+    restart: always
+    environment:
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=docker
+      - POSTGRES_DB=football
+    ports:
+      - '2345:5432'
+    volumes: 
+      - db:/var/lib/postgresql/data
+volumes:
+  db:
+    driver: local
