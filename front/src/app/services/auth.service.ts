@@ -18,16 +18,19 @@ export class AuthService {
             console.log('RESPONSE', response)
             localStorage.setItem('token', response.key);
             localStorage.setItem('user', email);
-            // localStorage.setItem('user', response.user);
           }
         }
       ));
   }
 
   isAuthenticated() {
-    if (localStorage.getItem('currentUser')) {
+    if (localStorage.getItem('key')) {
       // logged in so return true
       return true;
     }
+  }
+
+  logout() {
+    localStorage.clear();
   }
 }

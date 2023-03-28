@@ -9,7 +9,7 @@ import {Observable} from "rxjs";
 })
 export class ClubService {
   url = 'http://localhost:8080/api/clubs'
-  token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiYWRtaW4iLCJwYXNzd29yZCI6ImFkbWluIiwiaWF0IjoxNjgwMDE2NTMzLCJleHAiOjMzNjAwNjkwNjZ9.PAhbqP4GnZQ-sy3oGjLpnHGKpsj3v_P-Er6K1YJYDHU'
+  token = JSON.parse(localStorage.getItem('token'))
 
   constructor(private http: HttpClient) {
   }
