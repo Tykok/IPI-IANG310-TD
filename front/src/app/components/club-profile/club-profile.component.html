@@ -8,26 +8,28 @@
           <h5 class="title">{{title}}</h5>
         </div>
         <div class="card-body">
-          <form [formGroup]="clubForm" (ngSubmit)="onSubmit()">
+          <form [formGroup]="clubForm">
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
                   <label for="name" class="text-primary">Nom*</label>
                   <input type="text" class="form-control"
                          id="name"
+                         [ngClass]="{ 'is-invalid': (submitted || controls.name.touched || controls.name.dirty ) && controls.name.errors?.required }"
                          placeholder="Type the name of the club"
                          formControlName="name">
+                  <small
+                    *ngIf="(submitted || controls.name.touched || controls.name.dirty ) && controls.name.errors?.required">
+                    <span class="text-danger">{{"Ce champs est requis"}}</span>
+                  </small>
                 </div>
-                <small
-                  *ngIf="(submitted || controls.name.touched || controls.name.dirty ) && controls.name.errors?.required">
-                  <span class="text-danger">{{"Ce champs est requis"}}</span>
-                </small>
               </div>
               <div class="col-md-12">
                 <div class="form-group">
                   <label for="city" class="text-primary">Ville*</label>
                   <input type="text" class="form-control"
                          id="city"
+                         [ngClass]="{ 'is-invalid': (submitted || controls.city.touched || controls.city.dirty ) && controls.city.errors?.required }"
                          placeholder="Type the name of a city"
                          formControlName="city">
                   <small
@@ -41,6 +43,7 @@
                   <label for="country" class="text-primary">Pays*</label>
                   <input type="text" class="form-control"
                          id="country"
+                         [ngClass]="{ 'is-invalid': (submitted || controls.country.touched || controls.country.dirty ) && controls.country.errors?.required }"
                          placeholder="Type the name of a country"
                          formControlName="country">
                   <small
@@ -54,6 +57,7 @@
                   <label for="stadium" class="text-primary">Stade*</label>
                   <input type="text" class="form-control"
                          id="stadium"
+                         [ngClass]="{ 'is-invalid': (submitted || controls.stadium.touched || controls.stadium.dirty ) && controls.stadium.errors?.required }"
                          placeholder="Type the name of the club's stadium"
                          formControlName="stadium">
                   <small
@@ -67,6 +71,7 @@
                   <label for="logo" class="text-primary">Url du logo*</label>
                   <input type="text" class="form-control"
                          id="logo"
+                         [ngClass]="{ 'is-invalid': (submitted || controls.logo.touched || controls.logo.dirty ) && controls.logo.errors?.required }"
                          placeholder="Type the name of the club's stadium"
                          formControlName="logo">
                   <small

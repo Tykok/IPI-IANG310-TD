@@ -3,19 +3,16 @@ import {CommonModule,} from '@angular/common';
 import {BrowserModule} from '@angular/platform-browser';
 import {Routes, RouterModule} from '@angular/router';
 
-import {AdminLayoutComponent} from './layouts/admin-layout/admin-layout.component';
-import {ClubListComponent} from "./club/club-list/club-list.component";
-import {ClubProfileComponent} from "./club/club-profile/club-profile.component";
+import {ClubListComponent} from "./components/club-list/club-list.component";
+import {ClubProfileComponent} from "./components/club-profile/club-profile.component";
+import {LoginComponent} from "./components/login/login.component";
+import {AuthGuard} from "./services/auth-guard.service";
 
 const routes: Routes = [
-  {
-    path: '',
-    component: AdminLayoutComponent,
-    redirectTo: 'club/list'
-  },
-  {path: 'club/list', component: ClubListComponent},
-  {path: 'club/update/:id', component: ClubProfileComponent},
-  {path: 'club/new', component: ClubProfileComponent},
+  {path: 'club/list', component: ClubListComponent, /* canActivate: [AuthGuard] */},
+  {path: 'club/update/:id', component: ClubProfileComponent, /* canActivate: [AuthGuard] */},
+  {path: 'club/new', component: ClubProfileComponent, /* canActivate: [AuthGuard] */},
+  {path: 'login', component: LoginComponent},
   {
     path: '**',
     redirectTo: 'club/list'

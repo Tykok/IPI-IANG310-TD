@@ -1,0 +1,49 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <div class="col-md-6 mx-auto mt-3">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="title">{{"Connexion"}}</h5>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <div class="row">
+            <div class="col-md-12">
+              <label for="email" class="text-primary">Email *</label>
+              <input type="email" formControlName="email"
+                     id="email"
+                     class="form-control"
+                     [ngClass]="{ 'is-invalid': (controls.email.value !== '' || controls.email.touched || controls.email.dirty) && (controls.email.errors?.required || controls.email.invalid),
+                           'is-valid': controls.email.value !== '' && (!controls.email.errors?.required && !controls.email.invalid) }"
+                     placeholder="Email"
+                     required email>
+              <small
+                *ngIf="(submitted || controls.email.touched || controls.email.dirty ) && controls.email.errors?.required">
+                <span class="text-danger">{{"Ce champs est requis."}}</span>
+              </small>
+              <small *ngIf="controls.email.value !== '' && controls.email.invalid">
+                <span class="text-danger">{{"Veuillez saisir un email valide."}}</span>
+              </small>
+            </div>
+            <div class="col-md-12 mt-1">
+              <label for="password" class="text-primary">Password *</label>
+              <input type="password" formControlName="password" class="form-control"
+                     id="password"
+                     placeholder="Mot de passe"
+                     [ngClass]="{ 'is-invalid': submitted && controls.password.invalid, 'is-valid': submitted && !controls.password.invalid }"
+                     required>
+              <div *ngIf="submitted && (controls.password.invalid || controls.password.errors?.required)"
+                   class="help-block mt-1 text-danger"><i class="ft-alert-circle align-middle"></i>Ce champs est
+                requis.
+              </div>
+            </div>
+          </div>
+          <div class="pull-right">
+            <button class="btn btn-primary" (click)="onSubmit()">Se connecter</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

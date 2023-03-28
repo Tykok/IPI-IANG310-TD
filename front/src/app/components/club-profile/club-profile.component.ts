@@ -2,8 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {ClubModel} from "../../classes/club.model";
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {clubs} from "../clubs";
+import {clubs} from "../../club/clubs";
 import {Location} from "@angular/common";
+import {ClubService} from "../../services/club.service";
 
 @Component({
   selector: 'app-club-profile',
@@ -20,7 +21,8 @@ export class ClubProfileComponent implements OnInit {
   constructor(private route: ActivatedRoute,
               private router: Router,
               private fb: FormBuilder,
-              private location: Location) {
+              private location: Location,
+              private clubService: ClubService) {
   }
 
   ngOnInit() {
@@ -34,7 +36,8 @@ export class ClubProfileComponent implements OnInit {
 
     if (this.route.snapshot.routeConfig.path === 'club/new') {
       this.title = 'Ajouter un nouveau club'
-      this.loadClub();
+      this.club = new ClubModel();
+      this.setControls();
     } else {
       this.title = 'Modifier les information du club'
       const id = +this.route.snapshot.paramMap.get('id');
@@ -42,22 +45,25 @@ export class ClubProfileComponent implements OnInit {
     }
   }
 
-  loadClub(id?) {
-    this.club = id ? clubs.find(c => c.id === id) : new ClubModel(clubs.length + 1, undefined, undefined, undefined, undefined, undefined, true)
-    this.setControls();
+  loadClub(id) {
+    this.clubService.getById(id)
+      .subscribe(club => {
+        this.club = club;
+        this.setControls();
+      })
   }
-z
+
   get controls() {
     return this.clubForm.controls
   }
 
   setControls() {
     this.clubForm.patchValue({
-      name: this.club.name,
-      city: this.club.city,
-      country: this.club.country,
-      stadium: this.club.stadium,
-      logo: this.club.logo,
+      name: this.club?.name,
+      city: this.club?.city,
+      country: this.club?.country,
+      stadium: this.club?.stadium,
+      logo: this.club?.logo,
     });
   }
 
@@ -75,12 +81,10 @@ z
     this.club.stadium = this.controls.stadium.value;
     this.club.logo = this.controls.logo.value;
 
-    if (!clubs.find(c => c.id === this.club.id)){
-      clubs.push(this.club)
-    } else {
-      const index = clubs.findIndex(c => c.id === this.club.id);
-      clubs[index] = this.club;
-    }
+    this.clubService.update(this.club)
+      .subscribe(club => {
+        this.club = club;
+      })
 
     this.router.navigate(['/club/list'])
   }

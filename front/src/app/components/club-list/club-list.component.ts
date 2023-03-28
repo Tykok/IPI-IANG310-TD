@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ClubModel} from "../../classes/club.model";
 import {Router} from "@angular/router";
-import {clubs} from "../clubs";
+import {clubs} from "../../club/clubs";
+import {ClubService} from "../../services/club.service";
 
 @Component({
   selector: 'app-club-list',
@@ -11,7 +12,8 @@ import {clubs} from "../clubs";
 export class ClubListComponent implements OnInit {
   clubList : Array<ClubModel>;
 
-  constructor(private router: Router) {
+  constructor(private router: Router,
+              private clubService: ClubService) {
   }
 
   ngOnInit() {
@@ -19,7 +21,10 @@ export class ClubListComponent implements OnInit {
   }
 
   loadClubs() {
-    this.clubList = clubs
+    this.clubService.getAll()
+      .subscribe(clubs => {
+        this.clubList = clubs.filter(club => club.isActive === true);
+      })
   }
 
   updateClub(club?) {
