@@ -1,11 +1,11 @@
 type Football ={
-  id: number,
+  id?: number,
   name: string,
-city: string,
-country: string,
-stadium: string,
-logo : string,
-isActive:boolean
+  city: string,
+  country: string,
+  stadium: string,
+  logo : string,
+  isActive:boolean
 }
 
 export default Football

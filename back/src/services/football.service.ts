@@ -10,7 +10,7 @@ export const getClubById = async (clubId: number) => {
   return FootballModel.findByPk(clubId)
 }
 
-export const updateClubById = async (clubId: number, club: Football) => {
+export const updateClubById = async (clubId: number, club: Object) => {
   return FootballModel.update(club, { where: { id: clubId } })
 }
 

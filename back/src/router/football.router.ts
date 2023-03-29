@@ -24,15 +24,10 @@ footballRouter.get('/:clubId', async (req, res) => {
 
 footballRouter.put('/:clubId', async (req, res) => {
   const clubId = Number(req.params.clubId)
-  const club: Football= req.body
+  const club = req.body
   const numberOfRowUpdated = await updateClubById(clubId, club)
   return res.status(HttpStatusCode.CREATED).json(`${numberOfRowUpdated} row(s) updated`)
 })
 
-footballRouter.delete('/:clubId', async (req, res) => {
-  const clubId = Number(req.params.clubId)
-  const numberOfRowDeleted = await deleteClubById(clubId)
-  return res.status(HttpStatusCode.OK).json(`${numberOfRowDeleted} row(s) deleted`)
-})
 
 export default footballRouter
