@@ -25,7 +25,11 @@ You can run the project with `docker-compose`, to run it just type this command 
 docker-compose up --build
 ```
 
-> Next time, you can only type : `docker-compose up`.
+> To install `docker-compose`, you need to have first `docker`. Next you can install `docker-compose`.
+> Please refer to this link to install `docker-compose` : https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04 .
+> ⚠️ On Windows, you should hve a **WSL version 2**. Refer to this link to install the WSL : https://learn.microsoft.com/en-us/windows/wsl/install
+
+Next time, you can only type : `docker-compose up`.
 
 
 ### Run with `npm`
