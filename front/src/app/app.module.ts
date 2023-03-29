@@ -11,10 +11,11 @@ import {ComponentsModule} from './components/components.module';
 
 import {AppComponent} from './app.component';
 
-import {ClubProfileComponent} from "./components/club-profile/club-profile.component";
+import {ClubUpdateComponent} from "./components/club-update/club-update.component";
 import {ClubListComponent} from "./components/club-list/club-list.component";
 import {AuthGuard} from "./services/auth-guard.service";
 import {AuthService} from "./services/auth.service";
+import {OrderModule} from "ngx-order-pipe";
 
 @NgModule({
   imports: [
@@ -26,12 +27,13 @@ import {AuthService} from "./services/auth.service";
     AppRoutingModule,
     NgbModule,
     ToastrModule.forRoot(),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    OrderModule
   ],
   declarations: [
     AppComponent,
     ClubListComponent,
-    ClubProfileComponent
+    ClubUpdateComponent
   ],
   providers: [
     AuthService,

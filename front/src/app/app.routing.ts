@@ -4,14 +4,14 @@ import {BrowserModule} from '@angular/platform-browser';
 import {Routes, RouterModule} from '@angular/router';
 
 import {ClubListComponent} from "./components/club-list/club-list.component";
-import {ClubProfileComponent} from "./components/club-profile/club-profile.component";
+import {ClubUpdateComponent} from "./components/club-update/club-update.component";
 import {LoginComponent} from "./components/login/login.component";
 import {AuthGuard} from "./services/auth-guard.service";
 
 const routes: Routes = [
   {path: 'club/list', component: ClubListComponent, canActivate: [AuthGuard]},
-  {path: 'club/update/:id', component: ClubProfileComponent, canActivate: [AuthGuard]},
-  {path: 'club/new', component: ClubProfileComponent, canActivate: [AuthGuard]},
+  {path: 'club/update/:id', component: ClubUpdateComponent, canActivate: [AuthGuard]},
+  {path: 'club/new', component: ClubUpdateComponent, canActivate: [AuthGuard]},
   {path: 'login', component: LoginComponent},
   {
     path: '**',

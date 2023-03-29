@@ -1,11 +1,13 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {map} from "rxjs/operators";
+import {Router} from "@angular/router";
 
 @Injectable()
 export class AuthService {
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,
+              private router: Router) {
   }
 
   login(email: string, password: string) {
@@ -24,7 +26,7 @@ export class AuthService {
   }
 
   isAuthenticated() {
-    if (localStorage.getItem('key')) {
+    if (localStorage.getItem('token')) {
       // logged in so return true
       return true;
     }
@@ -32,5 +34,6 @@ export class AuthService {
 
   logout() {
     localStorage.clear();
+    this.router.navigate(['login'])
   }
 }

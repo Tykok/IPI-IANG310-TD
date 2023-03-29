@@ -7,6 +7,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { LoginComponent } from './login/login.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import { ClubProfileComponent } from './club-profile/club-profile.component';
 
 @NgModule({
   imports: [
@@ -18,11 +19,13 @@ import {ReactiveFormsModule} from "@angular/forms";
   declarations: [
     NavbarComponent,
     SidebarComponent,
-    LoginComponent
+    LoginComponent,
+    ClubProfileComponent
   ],
-  exports: [
-    NavbarComponent,
-    SidebarComponent
-  ]
+    exports: [
+        NavbarComponent,
+        SidebarComponent,
+        ClubProfileComponent
+    ]
 })
 export class ComponentsModule { }

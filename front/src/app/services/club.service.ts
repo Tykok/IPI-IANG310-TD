@@ -9,7 +9,7 @@ import {Observable} from "rxjs";
 })
 export class ClubService {
   url = 'http://localhost:8080/api/clubs'
-  token = JSON.parse(localStorage.getItem('token'))
+  token = localStorage.getItem('token')
 
   constructor(private http: HttpClient) {
   }
@@ -47,7 +47,7 @@ export class ClubService {
   }
 
   update(club: ClubModel) {
-    if (club) {
+    if (club.id === undefined) {
       return this.post(club)
     } else {
       return this.put(club)
