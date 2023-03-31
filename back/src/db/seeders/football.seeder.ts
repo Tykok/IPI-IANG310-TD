@@ -3,7 +3,6 @@ import { FootballColumns, footballTableName } from '../db.constants'
 
 const lines: FootballColumns[] = [
   {
-    id: 1,
     name: "Real Madrid CF",
     city: "Madrid",
     country: "Espagne",
@@ -12,7 +11,6 @@ const lines: FootballColumns[] = [
     isActive: true
   },
   {
-    id: 2,
     name: "FC Barcelona",
     city: "Barcelona",
     country: "Espagne",
@@ -21,7 +19,6 @@ const lines: FootballColumns[] = [
     isActive: true
   },
   {
-    id: 3,
     name: "Manchester United FC",
     city: "Manchester",
     country: "Angletterre",
@@ -30,7 +27,6 @@ const lines: FootballColumns[] = [
     isActive: true
   },
   {
-    id: 4,
     name: "Liverpool FC",
     city: "Liverpool",
     country: "Angletterre",
@@ -39,7 +35,6 @@ const lines: FootballColumns[] = [
     isActive: true
   },
   {
-    id: 5,
     name: "FC Bayern Munich",
     city: "Munich",
     country: "Allemagne",
@@ -48,7 +43,6 @@ const lines: FootballColumns[] = [
     isActive: true
   },
   {
-    id: 6,
     name: "Borussia Dortmund",
     city: "Dortmund",
     country: "Allemagne",
@@ -57,7 +51,6 @@ const lines: FootballColumns[] = [
     isActive: true
   },
   {
-    id: 7,
     name: "Paris Saint-Germain FC",
     city: "Paris",
     country: "France",
@@ -66,7 +59,6 @@ const lines: FootballColumns[] = [
     isActive: true
   },
   {
-    id: 8,
     name: "Olympique de Marseille",
     city: "Marseille",
     country: "France",
@@ -75,7 +67,6 @@ const lines: FootballColumns[] = [
     isActive: true
   },
   {
-    id: 9,
     name: "AC Milan",
     city: "Milan",
     country: "Italie",
@@ -84,7 +75,6 @@ const lines: FootballColumns[] = [
     isActive: true
   },
   {
-    id: 10,
     name: "Juventus FC",
     city: "Turin",
     country: "Italie",
@@ -93,7 +83,6 @@ const lines: FootballColumns[] = [
     isActive: true
   },
   {
-    id: 11,
     name: "SL Benfica",
     city: "Lisbonne",
     country: "Portugal",
@@ -102,7 +91,6 @@ const lines: FootballColumns[] = [
     isActive: true
   },
   {
-    id: 12,
     name: "Sporting CP",
     city: "Lisbonne",
     country: "Portugal",
@@ -111,7 +99,6 @@ const lines: FootballColumns[] = [
     isActive: true
   },
   {
-    id: 13,
     name: "Ajax Amsterdam",
     city: "Amsterdam",
     country: "Pays Bas",
@@ -120,7 +107,6 @@ const lines: FootballColumns[] = [
     isActive: true
   },
   {
-    id: 14,
     name: "PSV Eindhoven",
     city: "Eindhoven",
     country: "Pays-Bas",
@@ -129,7 +115,6 @@ const lines: FootballColumns[] = [
     isActive: true
   },
   {
-    id: 15,
     name: "Galatasaray SK",
     city: "Istanbul",
     country: "Turquie",
@@ -138,7 +123,6 @@ const lines: FootballColumns[] = [
     isActive: true
   },
   {
-    id: 16,
     name: "Fenerbahçe SK",
     city: "Istanbul",
     country: "Turquie",

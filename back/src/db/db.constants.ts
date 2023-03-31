@@ -34,13 +34,13 @@ export const userModelName = 'user'
 
 
 export type FootballColumns = {
-  id: number
-name: string
-city: string
-country: string
-stadium: string
-logo: string
-isActive: boolean
+  id?: number
+  name: string
+  city: string
+  country: string
+  stadium: string
+  logo: string
+  isActive: boolean
 }
 
 export const footballTableName = 'football'
