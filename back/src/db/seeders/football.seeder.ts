@@ -4,34 +4,6 @@ import { FootballColumns, footballTableName } from '../db.constants'
 const lines: FootballColumns[] = [
   {
     id: 1,
-    name: 'Toulouse FC',
-    city: 'Toulouse',
-    country: 'France',
-    stadium: 'Stadium Municipal',
-    logo: 'https://upload.wikimedia.org/wikipedia/fr/8/8b/Logo_Toulouse_FC_2018.svg',
-    isActive: true
-  },
-  {
-    id: 2,
-    name: 'Monaco',
-    city: 'Monaco',
-    country: 'France',
-    stadium: 'Stade Louis II',
-
-    logo: 'https://upload.wikimedia.org/wikipedia/fr/5/58/Logo_AS_Monaco_FC_-_2021.svg',
-    isActive: true
-  },
-  {
-    id: 3,
-    name: 'Olympique Marseille',
-    city: 'Marseille',
-    country: 'France',
-    stadium: 'Stade Vélodrome',
-    logo: 'https://upload.wikimedia.org/wikipedia/fr/4/43/Logo_Olympique_de_Marseille.svg',
-    isActive: true
-  },
-  {
-    id: 4,
     name: "Real Madrid CF",
     city: "Madrid",
     country: "Espagne",
@@ -40,7 +12,7 @@ const lines: FootballColumns[] = [
     isActive: true
   },
   {
-    id: 5,
+    id: 2,
     name: "FC Barcelona",
     city: "Barcelona",
     country: "Espagne",
@@ -49,7 +21,7 @@ const lines: FootballColumns[] = [
     isActive: true
   },
   {
-    id: 6,
+    id: 3,
     name: "Manchester United FC",
     city: "Manchester",
     country: "Angletterre",
@@ -58,7 +30,7 @@ const lines: FootballColumns[] = [
     isActive: true
   },
   {
-    id: 7,
+    id: 4,
     name: "Liverpool FC",
     city: "Liverpool",
     country: "Angletterre",
@@ -67,7 +39,7 @@ const lines: FootballColumns[] = [
     isActive: true
   },
   {
-    id: 8,
+    id: 5,
     name: "FC Bayern Munich",
     city: "Munich",
     country: "Allemagne",
@@ -76,7 +48,7 @@ const lines: FootballColumns[] = [
     isActive: true
   },
   {
-    id: 9,
+    id: 6,
     name: "Borussia Dortmund",
     city: "Dortmund",
     country: "Allemagne",
@@ -85,7 +57,7 @@ const lines: FootballColumns[] = [
     isActive: true
   },
   {
-    id: 10,
+    id: 7,
     name: "Paris Saint-Germain FC",
     city: "Paris",
     country: "France",
@@ -94,7 +66,7 @@ const lines: FootballColumns[] = [
     isActive: true
   },
   {
-    id: 11,
+    id: 8,
     name: "Olympique de Marseille",
     city: "Marseille",
     country: "France",
@@ -103,7 +75,7 @@ const lines: FootballColumns[] = [
     isActive: true
   },
   {
-    id: 12,
+    id: 9,
     name: "AC Milan",
     city: "Milan",
     country: "Italie",
@@ -112,7 +84,7 @@ const lines: FootballColumns[] = [
     isActive: true
   },
   {
-    id: 13,
+    id: 10,
     name: "Juventus FC",
     city: "Turin",
     country: "Italie",
@@ -121,25 +93,25 @@ const lines: FootballColumns[] = [
     isActive: true
   },
   {
-    id: 14,
+    id: 11,
     name: "SL Benfica",
-    city: "Lisbon",
+    city: "Lisbonne",
     country: "Portugal",
     stadium: "Estádio da Luz",
     logo: "https://upload.wikimedia.org/wikipedia/fr/thumb/a/a2/SL_Benfica_logo.svg/langfr-1920px-SL_Benfica_logo.svg.png",
     isActive: true
   },
   {
-    id: 15,
+    id: 12,
     name: "Sporting CP",
-    city: "Lisbon",
+    city: "Lisbonne",
     country: "Portugal",
     stadium: "Estádio de Alvalade",
     logo: "https://upload.wikimedia.org/wikipedia/fr/thumb/1/12/Logo_Sporting_Clube_Portugal.svg/langfr-1024px-Logo_Sporting_Clube_Portugal.svg.png",
     isActive: true
   },
   {
-    id: 16,
+    id: 13,
     name: "Ajax Amsterdam",
     city: "Amsterdam",
     country: "Pays Bas",
@@ -148,7 +120,7 @@ const lines: FootballColumns[] = [
     isActive: true
   },
   {
-    id: 17,
+    id: 14,
     name: "PSV Eindhoven",
     city: "Eindhoven",
     country: "Pays-Bas",
@@ -157,7 +129,7 @@ const lines: FootballColumns[] = [
     isActive: true
   },
   {
-    id: 18,
+    id: 15,
     name: "Galatasaray SK",
     city: "Istanbul",
     country: "Turquie",
@@ -166,7 +138,7 @@ const lines: FootballColumns[] = [
     isActive: true
   },
   {
-    id: 19,
+    id: 16,
     name: "Fenerbahçe SK",
     city: "Istanbul",
     country: "Turquie",
