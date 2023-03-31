@@ -32,13 +32,11 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     if (this.loginForm.invalid) {
-      console.log('error', this.loginForm)
       return;
     }
 
     this.authService.login(this.controls.email.value, this.controls.password.value)
       .subscribe(login => {
-        console.log('CONNEXION RÉUSSI!')
         this.router.navigate(['club/list'])
       })
   }

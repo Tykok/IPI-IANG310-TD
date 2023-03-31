@@ -17,7 +17,6 @@ export class AuthService {
       .pipe(map(response => {
           // login successful if there's a jwt token in the response
           if (response && response.key) {
-            console.log('RESPONSE', response)
             localStorage.setItem('token', response.key);
             localStorage.setItem('user', email);
           }
