@@ -1,13 +1,12 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {RouterModule} from '@angular/router';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
-import { NavbarComponent } from './navbar/navbar.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
-import { LoginComponent } from './login/login.component';
+import {NavbarComponent} from './navbar/navbar.component';
+import {LoginComponent} from './login/login.component';
 import {ReactiveFormsModule} from "@angular/forms";
-import { ClubProfileComponent } from './club-profile/club-profile.component';
+import {ClubProfileComponent} from './club-profile/club-profile.component';
 
 @NgModule({
   imports: [
@@ -18,14 +17,13 @@ import { ClubProfileComponent } from './club-profile/club-profile.component';
   ],
   declarations: [
     NavbarComponent,
-    SidebarComponent,
     LoginComponent,
     ClubProfileComponent
   ],
-    exports: [
-        NavbarComponent,
-        SidebarComponent,
-        ClubProfileComponent
-    ]
+  exports: [
+    NavbarComponent,
+    ClubProfileComponent
+  ]
 })
-export class ComponentsModule { }
+export class ComponentsModule {
+}

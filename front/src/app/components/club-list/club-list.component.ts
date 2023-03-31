@@ -1,7 +1,6 @@
 import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {ClubModel} from "../../classes/club.model";
 import {Router} from "@angular/router";
-import {clubs} from "../../club/clubs";
 import {ClubService} from "../../services/club.service";
 
 @Component({

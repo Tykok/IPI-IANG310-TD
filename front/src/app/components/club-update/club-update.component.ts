@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {ClubModel} from "../../classes/club.model";
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {clubs} from "../../club/clubs";
 import {Location} from "@angular/common";
 import {ClubService} from "../../services/club.service";
 
