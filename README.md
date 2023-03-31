@@ -17,6 +17,18 @@
 
 ## Running from command line
 
+Before, go in the back folder and next the front folder to install all dependencies with your best package manager !
+
+Or go at the root of project and run this command :
+
+```bash
+# NPM
+cd back && npm i && cd ../front && npm i
+
+# YARN
+cd back && yarn i && cd ../front && yarn i
+```
+
 ### Run with docker (**advised**)
 
 You can run the project with `docker-compose`, to run it just type this command into your Terminal at the project root path : 
